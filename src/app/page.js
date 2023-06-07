@@ -1,13 +1,13 @@
 import React from "react";
 import { restaurants } from "@/mocks";
-import { Restauran } from "@/components/Restauran/Restauran";
+import { Restaurant } from "@/components/Restaurant/Restaurant";
 
 export default function Home() {
 
   return (
     <div>
-      {restaurants.map(restauran => {
-        return <Restauran restauran={restauran} />
+      {restaurants.map(restaurant => {
+        return <Restaurant restaurant={restaurant} />
       })}
     </div>
   );
