@@ -1,14 +1,16 @@
-import { Dish } from "@/components/Dish/Dish";
 import React from "react";
+import { Dish } from "@/components/Dish/Dish";
 
-/* eslint-disable react/jsx-key */
 export const Menu = ({ menu }) => {
   if (!menu?.length) {
-    return <span>Empty Menu</span>;
+    return (
+      <div class="menu-item">
+        <h3>Empty Menu</h3>
+      </div>);
   }
 
   return (
-    <div>
+    <div class="menu-item">
       <h3>Menu</h3>
       <ul>
         {menu.map((dish) => (
