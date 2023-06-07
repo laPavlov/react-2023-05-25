@@ -4,13 +4,13 @@ import { Dish } from "@/components/Dish/Dish";
 export const Menu = ({ menu }) => {
   if (!menu?.length) {
     return (
-      <div class="menu-item">
+      <div class="menu-container">
         <h3>Empty Menu</h3>
       </div>);
   }
 
   return (
-    <div class="menu-item">
+    <div class="menu-container">
       <h3>Menu</h3>
       <ul>
         {menu.map((dish) => (

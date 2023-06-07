@@ -7,7 +7,7 @@ export const Dish = ({ dish }) => {
 
   const { name, price } = dish;
   return (
-    <div>
+    <div class="dish-item">
       <p>{name}</p>
       <p>{price}</p>
     </div>
