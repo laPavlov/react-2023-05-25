@@ -13,10 +13,11 @@ export const Restaurant = ({ restaurant }) => {
 
   return (
     <div>
-      <h2>{name}</h2>
-      <Menu menu={menu} />
-      <Reviews reviews={reviews} />
-      <NewReviewForm />
+      <div className="content-box">
+        <h2 className="title">{name}</h2>
+        <Menu menu={menu} /></div>
+      <div className="content-box"><Reviews reviews={reviews} /></div>
+      <div className="content-box"><NewReviewForm /></div>
     </div>
   );
 };

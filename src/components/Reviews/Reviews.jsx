@@ -1,5 +1,6 @@
 import { Review } from "@/components/Review/Review";
 import React from "react";
+import style from "./styles.module.scss";
 
 /* eslint-disable react/jsx-key */
 export const Reviews = ({ reviews }) => {
@@ -9,7 +10,7 @@ export const Reviews = ({ reviews }) => {
 
   return (
     <div>
-      <h3>Reviews</h3>
+      <h3 className="title">Reviews</h3>
       <ul>
         {reviews.map((review) => (
           <li>

@@ -1,5 +1,6 @@
 import { Rating } from "@/components/Rating/Rating";
 import React, { useReducer, useState } from "react";
+import style from "./styles.module.scss";
 
 const initialState = {
   name: "",
@@ -32,25 +33,32 @@ export const NewReviewForm = () => {
   return (
     <div>
       <div>
-        <label>Name</label>
-        <input
-          value={form.name}
-          onChange={(event) =>
-            dispatch({ type: "changeName", payload: event.target.value })
-          }
-        />
+        <h3 className="title">Feadback</h3>
+        <div className={style.field}>
+          <label className={style.label}>Name</label>
+          <input
+            className="input-field"
+            value={form.name}
+            onChange={(event) =>
+              dispatch({ type: "changeName", payload: event.target.value })
+            }
+          />
+        </div>
       </div>
       <div>
-        <label>Text</label>
-        <input
-          value={form.text}
-          onChange={(event) =>
-            dispatch({ type: "changeText", payload: event.target.value })
-          }
-        />
+        <div className={style.field}>
+          <label className={style.label}>Text</label>
+          <input
+            className="input-field"
+            value={form.text}
+            onChange={(event) =>
+              dispatch({ type: "changeText", payload: event.target.value })
+            }
+          />
+        </div>
       </div>
-      <div>
-        <label>Rating</label>
+      <div className={style.field}>
+        <label className={style.label}>Rating</label>
         <Rating
           value={form.rating}
           onChange={(value) =>
