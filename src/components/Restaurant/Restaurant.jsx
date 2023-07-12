@@ -1,22 +1,26 @@
 /* eslint-disable react/jsx-key */
 import { Menu } from "@/components/Menu/Menu";
-import { NewReviewForm } from "@/components/NewReviewForm/NewReviewForm";
 import { Reviews } from "@/components/Reviews/Reviews";
 import React from "react";
+
+import styles from "./styles.module.scss";
+import { MenuContainer } from "@/containers/MenuContainer";
+import { ReviewsContainer } from "@/containers/ReviewsContainer";
 
 export const Restaurant = ({ restaurant }) => {
   if (!restaurant) {
     return null;
   }
 
-  const { name, menu, reviews } = restaurant;
+  const { id, name, menu, reviews } = restaurant;
 
   return (
     <div>
       <h2>{name}</h2>
-      <Menu menu={menu} />
-      <Reviews reviews={reviews} />
-      <NewReviewForm />
+      <MenuContainer menu={menu} className={styles.menu}/>
+      <ReviewsContainer reviews={reviews} className={styles.reviews}/>
+      {/* <Menu menu={menu} className={styles.menu} />
+      <Reviews reviews={reviews} className={styles.reviews} /> */}
     </div>
   );
 };

@@ -1,0 +1,29 @@
+.root {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  width: 500px;
+  margin: 10px auto;
+}
+
+.link {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
