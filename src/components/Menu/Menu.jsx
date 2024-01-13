@@ -1,22 +1,19 @@
-import { Dish } from "@/components/Dish/Dish";
 import React from "react";
 
-/* eslint-disable react/jsx-key */
-export const Menu = ({ menu }) => {
-  if (!menu?.length) {
-    return <span>Empty Menu</span>;
-  }
+import styles from "./styles.module.scss";
+import classNames from "classnames";
+import { DishContainer } from "@/containers/DishContainer";
 
+/* eslint-disable react/jsx-key */
+export const Menu = ({ dishIds, className }) => {
   return (
-    <div>
+    <div className={classNames(styles.root, className)}>
       <h3>Menu</h3>
-      <ul>
-        {menu.map((dish) => (
-          <li>
-            <Dish dish={dish} />
-          </li>
+      <div className={styles.dishList}>
+        {dishIds.map((dishId) => (
+          <DishContainer dishId={dishId} className={styles.dish} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

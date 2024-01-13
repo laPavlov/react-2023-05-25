@@ -1,30 +1,27 @@
 "use client";
 
+import { Button } from "@/components/Button/Button";
 /* eslint-disable react/jsx-key */
-import { Restaurant } from "@/components/Restaurant/Restaurant";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-export const Restaurants = ({ restaurants }) => {
-  let [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0);
+import styles from "./styles.module.scss";
+import { RestaurantTabContainer } from "@/containers/RestaurantTabContainer";
+import { RestaurantContainer } from "@/containers/RestaurantContainer";
 
-  useEffect(() => {
-    console.log("reset");
-  }, [activeRestaurantIndex]);
+export const Restaurants = ({ restaurantIds }) => {
+  let [activeRestaurantId, setActiveRestaurantId] = useState(restaurantIds[0]);
 
   return (
-    <div>
-      <div>
-        {restaurants.map(({ name }, index) => (
-          <button
-            onClick={() => {
-              setActiveRestaurantIndex(index);
-            }}
-          >
-            {name}
-          </button>
+    <div className={styles.root}>
+      <div className={styles.filters}>
+        {restaurantIds.map((id) => (
+          <RestaurantTabContainer
+            restaurantId={id}
+            onClick={() => setActiveRestaurantId(id)}
+          />
         ))}
       </div>
-      <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
+      <RestaurantContainer restaurantId={activeRestaurantId} />
     </div>
   );
 };
